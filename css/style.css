@@ -1,5 +1,9 @@
 :root {
   --clr-primary: #2355F2;
+  --clr-secondary: #BBBFCC;
+  --clr-secondary-lt: #E6E8F0;
+  --clr-helper: #F5F7FA;
+  --clr-ntrl-max: #FFF;
   --ff-primary: 'Work Sans', sans-serif;
 }
 html {
@@ -18,6 +22,10 @@ body {
 ul {
   list-style: none;
 }
+input {
+  font: inherit;
+  outline: none;
+}
 button {
   padding: 0;
   border: none;
@@ -29,4 +37,103 @@ button {
 a {
   text-decoration: none;
   color: inherit;
+}
+/* ========== STYLES ========== */
+.main-section {
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.popup {
+  width: 100%;
+  max-width: 42rem;
+}
+.popup__header {
+  width: 100%;
+  padding: 5.5rem 6rem;
+  text-align: center;
+  background-color: var(--clr-primary);
+  background-image: url('../img/pattern.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.popup__title {
+  font-size: 2.6rem;
+  font-weight: 600;
+  color: var(--clr-ntrl-max);
+}
+.popup__info {
+  width: 100%;
+  padding: 2.5rem 1.6rem;
+  font-size: 1.4rem;
+  text-align: center;
+  background-color: var(--clr-ntrl-max);
+}
+.popup__descrip {
+  margin-block-end: 2.4rem;
+  line-height: 1.4;
+}
+.popup__form {
+  width: 100%;
+  margin-block-end: 1.6rem;
+  display: flex;
+}
+.popup__input {
+  padding: 1.3rem 1.7rem;
+  flex-grow: 1;
+  border: 1px solid var(--clr-secondary-lt);
+  border-radius: .5rem;
+  background-color: var(--clr-helper);
+}
+.popup__input::placeholder {
+  color: var(--clr-secondary);
+}
+.popup__btn {
+  margin-inline-start: .8rem;
+  padding: 1.3rem 2.4rem;
+  border-radius: .5rem;
+  font-weight: 500;
+  background-color: var(--clr-primary);
+  color: var(--clr-ntrl-max);
+}
+.popup__advice {
+  margin-block-end: 3.4rem;
+  text-align: start;
+  color: var(--clr-secondary);
+}
+.popup__review {
+  line-height: 1.4;
+}
+.profile {
+  margin-block-end: 1.8rem;
+  display: inline-grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: repeat(2, auto);
+  text-align: start;
+}
+.profile__img {
+  margin-inline-end: .8rem;
+  display: block;
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;
+}
+.profile__name {
+  align-self: end;
+  font-weight: 700;
+}
+/* ========== MEDIA Q ========== */
+@media (min-width: 26.25em) {
+  .main-section {
+    min-height: 100vh;
+    padding: 2rem 0;
+    display: grid;
+    place-items: center;
+    background-image: url('../img/background.png');
+  }
+  .popup {
+    border-radius: .8rem;
+    overflow: hidden;
+  }
 }
